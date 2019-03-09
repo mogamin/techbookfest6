@@ -1,26 +1,15 @@
-sources = 01-Roswell/roswell.pdf \
-	  02-Lem/lem.pdf \
-	  09-RaspberryPi/RaspberryPi.pdf
-target = techbookfest6.pdf
-all: $(target)
+.PHONY: run
 
-$(target): $(sources)
-	pdftk $(sources) cat output $@
+MD2REVIEW_DOCKER_IMG=nuitsjp/md2review:1.12.0
+REVIEW_DOCKER_IMG=vvakame/review:3.1
+WORK_DIR=/work
 
-%.pdf: %.md
-	node_modules/markdown-pdf/bin/markdown-pdf $<
+review:
+	docker run --rm -w=$(WORK_DIR) -v `pwd`/src:$(WORK_DIR) $(MD2REVIEW_DOCKER_IMG) /bin/sh -c "md2reviews.sh"
 
-install: node_modules/markdown-pdf/bin/markdown-pdf
-
-node_modules/markdown-pdf/bin/markdown-pdf: package.json
-	yarn add markdown-pdf
-
-package.json:
-	yarn init -y
-clean:
-	rm -f $(sources)
-	rm -f $(target)
-
-clean-all: clean
-	rm -rf node_modules
-	rm -rf package.json
+pdf: review
+	docker run --rm -w=$(WORK_DIR) -v `pwd`/src:$(WORK_DIR) $(REVIEW_DOCKER_IMG) /bin/sh -c "review-pdfmaker config.yml" 
+	
+pull:
+	docker pull $(MD2REVIEW_DOCKER_IMG)
+	docker pull $(REVIEW_DOCKER_IMG)
