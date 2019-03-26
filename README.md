@@ -7,9 +7,9 @@
 
 0. まえがき @keisuke-umezawa
 1. Chainerについて @kmaehashi
-2. ChainerCV + kaggle @keisuke-umezawa
+2. ChainerCV @mogami
 3. ChainerRL @ikeyasu
-4. TBD @mogami san
+4. Chainer + kaggle @keisuke-umezawa
 5. chugの歴史とあとがき @hidetomasuoka
 
 ## TODO
