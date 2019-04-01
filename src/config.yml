@@ -65,12 +65,12 @@ aut: ["ikeuchisan", "梅澤慶介", "maehashisan", "masuokasan", "mogamisan"]
 # a-trl, trl: 翻訳者
 
 # 刊行日(省略した場合は実行時の日付)
-date: 2019-03-09
+date: 2019-04-14
 # 発行年月。YYYY-MM-DD形式による配列指定。省略した場合はdateを使用する
 # 複数指定する場合は次のように記述する
 # [["初版第1刷の日付", "初版第2刷の日付"], ["第2版第1刷の日付"]]
 # 日付の後ろを空白文字で区切り、任意の文字列を置くことも可能。
-history: [["2019-03-09"]]
+history: [["2019-04-14"]]
 # 権利表記(配列で複数指定可)
 # rights: (C) 2016-2019 Re:VIEW Developers
 # description: 説明
@@ -103,7 +103,7 @@ stylesheet: ["style.css"]
 # htmlversion: 5
 
 # 目次として抽出する見出しレベル
-toclevel: 3
+toclevel: 2
 
 # 採番の設定。採番させたくない見出しには「==[nonum]」のようにnonum指定をする
 #
@@ -111,7 +111,7 @@ toclevel: 3
 secnolevel: 2
 
 # 本文中に目次ページを作成するか。省略した場合はnull (作成しない)
-# toc: true
+toc: true
 
 # EPUB2標準の目次(NCX)以外に物理目次ファイルを作成するか。省略した場合はnull (作成しない)
 # ePUB3においてはこの設定によらず必ず作成される
@@ -157,7 +157,7 @@ coverimage: cover.jpg
 # fontdir: fonts
 
 # imagedir内から取り込まれる対象となるファイル拡張子。省略した場合は以下
-# image_ext: ["png", "gif", "jpg", "jpeg", "svg", "ttf", "woff", "otf"]
+image_ext: ["ai", "png", "gif", "jpg", "jpeg", "svg", "ttf", "woff", "otf"]
 
 # fontdir内から取り込まれる対象となるファイル拡張子。省略した場合は以下
 # font_ext: ["ttf", "woff", "otf"]
@@ -178,7 +178,7 @@ coverimage: cover.jpg
 
 # review-vol向けのヒント情報
 # 1ページの行数文字数と1kbごとのページ数を用紙サイズで指定する(A5 or B5)
-page_metric: B5
+page_metric: A5
 #
 # あるいは、配列で指定することもできる
 # 各数字の意味は、順にリストの行数、リストの1行字数、テキストの行数、テキストの1行字数、1kバイトごとのページ数
@@ -316,7 +316,7 @@ texstyle: ["reviewmacro"]
 # LaTeX用のdocumentclassを指定する
 # オプションについてはsty/README.mdを参照
 # デフォルトは印刷用。電子配布版を作るには media=ebook とする
-texdocumentclass: ["review-jsbook", "media=print,paper=a5"]
+texdocumentclass: ["review-jsbook", "media=print,paper=b5,cover=true"]
 #
 # LaTeX用のコマンドを指定する
 # texcommand: "uplatex"
@@ -342,7 +342,7 @@ pdfmaker:
   # TeX版で利用する表紙画像。
   # 仕上がりサイズ+塗り足し3mmありのPDFまたはIllustratorファイル（PDF互換オプション付き）を推奨。
   # 拡縮はされず「そのまま」貼り付けられる
-  coverimage: cover-a5.ai
+  coverimage: hyoushi.png
   #
   # TeXコンパイル前に実行するプログラム。変換後のTeXソースを調整したいときに使用する。
   # 渡される引数1=作業用展開ディレクトリ、引数2=呼び出しを実行したディレクトリ

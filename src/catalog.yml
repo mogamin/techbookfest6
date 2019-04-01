@@ -1,7 +1,7 @@
 PREDEF:
+  - 00-preface.re
 
 CHAPS:
-  - 00-preface.re
   - 01-chainer.re
   - 02-chainercv.re
   - 03-chainerrl.re
