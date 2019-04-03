@@ -87,7 +87,7 @@ chainer-jp Slackに！
 Chainerエバンジェリストとしてコミュニティ活動やイベント活動の運営を行っています。ハンズオンどこでも開催しに行きます！
 
 - 前橋 賢一(@kmaehashi)
-  - 株式会社Preferred Networksで、Chainer/CuPyの開発やリリース管理、テスト環境の整備、ユーザサポートなどに携わっています。
+  - Chainer/CuPyの開発やリリース管理、テスト環境の整備、ユーザサポートなどに携わっています。
   
 - Yasuki Ikeuchi(@ikeyasu)  
   - 株主会社ACCESSのCo-CTO。普段はIoT屋をする傍ら、Chainerで遊んでます。
