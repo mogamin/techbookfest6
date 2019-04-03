@@ -97,7 +97,7 @@ ChainerRLの説明の前に、もう一つ、説明しなければならない�
 
 それを実現しているのがOpen AI Gymです。
 
-手持ちの環境に、Open AI Gymを入れて見ましょう。
+手持ちの環境に、Open AI Gymを入れてみましょう。
 
 ```
 $ pip install gym
