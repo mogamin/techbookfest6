@@ -1,12 +1,35 @@
 # kaggleにsubmitしよう！
 
-この章では以下を行います。
+@<icon>{cheiko} 「うめざわ、この章では何をやるの？」
 
-* kaggleのデータセットをダウンロードし、試しにsubmitしてみること
-* 好きなデータセットをChainerで使えるように変換し、モデルの訓練・推論を行うこと
+//blankline
+
+@<icon>{yousei} 「この章ではChainerを使ってkaggleに参加してみるよ！」
+
+//blankline
+
+@<icon>{cheiko} 「kaggle？？？」
+
+//blankline
+
+@<icon>{yousei} 「kaggleはデータサイエンスの問題でスコアを競うオンラインコンペティションだよ〜〜」
+
+//blankline
+
+ちぇい子は知っていたような顔をした。
+
+//blankline
+
+@<icon>{yousei} 「コンペティションにsubmitするには、Chainerで使えるようにデータを読み込んで学習を行ったあと、課題のデータに対して予測・推論をする必要があるんだ。」
+
+//blankline
+
+※この章ではGoogleColabratory@<fn>{fn40}上で実行することを想定しています。
+//footnote[fn40][https://colab.research.google.com/]
 
 ## kaggleコマンドの準備
-準備として、kaggleのデータセットを利用して何かしらの結果を提出してみましょう。手順は[リンク](https://qiita.com/fam_taro/items/eb9bae0b82248f9abd28)を参考にしています。
+準備として、kaggleのデータセットを利用して何かしらの結果を提出してみましょう。@<fn>{fn41}
+//footnote[fn41][手順はhttps://qiita.com/fam_taro/items/eb9bae0b82248f9abd28を参考にしています]
 
 ### kaggle コマンド(api) のインストール
 
@@ -120,7 +143,8 @@ train_val = create_dataset(df_train_val)
 
 ```
 train_size = 30000
-train, validation = chainer.datasets.split_dataset_random(train_val, train_size, seed=0)
+train, validation = chainer.datasets.split_dataset_random(
+    train_val, train_size, seed=0)
 ```
 
 ここでは、訓練と検証を行う関数`train_and_validate`を定義します。
@@ -258,4 +282,11 @@ df_submission.to_csv(submission_path, index_label="ImageId")
 
 ## この先勉強をするために
 
-* hoge
+この章の内容は、Chainer Colab Notebooks@<fn>{fn43}の一部を抜粋したものです。
+//footnote[fn43][https://chainercv.readthedocs.io/en/stable/tutorial/index.html]
+
+他にももっと基礎的なハンズオンや応用的なハンズオンも揃っていますので、ぜひ興味を持った方はお試しください。
+
+//blankline
+
+@<icon>{cheiko} 「こんなにあるんだからやるしかないね！」
