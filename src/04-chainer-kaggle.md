@@ -106,7 +106,7 @@ train_path = '/content/train.csv'
 test_path = '/content/test.csv'
 ```
 
-`pandas`を使ってcsvを読み込んでみましょう。`pandas`はpythonで頻繁にしようされるデータ操作・分析ライブラリです。`read_csv`で簡単にcsvファイルを読み込むことができます。
+`pandas`を使ってcsvを読み込んでみましょう。`pandas`はpythonで頻繁に使用されるデータ操作・分析ライブラリです。`read_csv`で簡単にcsvファイルを読み込むことができます。
 
 ```
 df_train_val = pd.read_csv(train_path)
@@ -139,7 +139,7 @@ def create_dataset(df, is_test = False):
 train_val = create_dataset(df_train_val)
 ```
 
-ここでは、`30.000`を訓練用データ、残りを検証用データに分割してみましょう。
+ここでは、30,000レコードを訓練用データに、残りを検証用データに分割してみましょう。
 
 ```
 train_size = 30000
@@ -148,7 +148,6 @@ train, validation = chainer.datasets.split_dataset_random(
 ```
 
 ここでは、訓練と検証を行う関数`train_and_validate`を定義します。
-詳しい説明は前回のハンズオンの資料を参照ください。
 
 ```
 from chainer import optimizers, training
@@ -190,7 +189,7 @@ def  train_and_validate(
     trainer.run()
 ```
 
-ここでは、最も単純なニューラルネットワークモデルとして、2層の多層パーセプトロン（MLP2）を作ってみましょう。
+ここでは、最も単純なニューラルネットワークモデルとして、2層の多層パーセプトロン（MLP）を作ってみましょう。
 
 ```
 import chainer.functions as F
@@ -199,7 +198,7 @@ import chainer.links as L
 class MLP(Chain):
 
     def __init__(self):
-        super(MLP2, self).__init__()
+        super(MLP, self).__init__()
         with self.init_scope():
             self.l1=L.Linear(None, 200)
             self.l2=L.Linear(None, 10)
@@ -283,7 +282,7 @@ df_submission.to_csv(submission_path, index_label="ImageId")
 ## この先勉強をするために
 
 この章の内容は、Chainer Colab Notebooks@<fn>{fn43}の一部を抜粋したものです。
-//footnote[fn43][https://chainercv.readthedocs.io/en/stable/tutorial/index.html]
+//footnote[fn43][https://chainer-colab-notebook.readthedocs.io/ja/latest/]
 
 他にももっと基礎的なハンズオンや応用的なハンズオンも揃っていますので、ぜひ興味を持った方はお試しください。
 
