@@ -91,13 +91,12 @@ ChainerRLの説明の前に、もう一つ、説明しなければならない�
 
 ![強化学習の要素](src/images/chainerrl_fig2.png)
 
-エージェントは、行動を決めるもので、ChainerRLではその内部で用意されています。
-一方、環境は、シミュレーション環境等です。例えば、ブロック崩しの場合は、そのエミュレータが環境になります。
+エージェントは、行動を決めるもので、ChainerRLではその内部に用意されています。
+一方、環境はシミュレーション環境等です。例えば、ブロック崩しの場合は、そのシミュレータが環境になります。
 この環境とエージェントの間のI/Fが統一されていれば、エージェントのプログラムを変えずに、環境を入れ換えることができるはずです。
-
 それを実現しているのがOpen AI Gymです。
 
-手持ちの環境に、Open AI Gymを入れてみましょう。
+それでは、手持ちの環境にOpen AI Gymを入れてみましょう。
 
 ```
 $ pip install gym
@@ -187,9 +186,9 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout, format='')
 # result/ に結果が保存される
 chainerrl.experiments.train_agent_with_evaluation(
     agent, env,
-    steps=20000,           # 20000ステップ学習する
-    eval_n_runs=10,       ## 評価の度に10回実行する
-    eval_interval=1000,   # 1000ステップ毎に評価する
+    steps=20000,          # 20,000ステップ学習する
+    eval_n_runs=10,       # 評価の度に10回実行する
+    eval_interval=1000,   # 1,000ステップ毎に評価する
     outdir='result')      # resultに出力
 ```
 
@@ -290,9 +289,9 @@ agent = chainerrl.agents.DoubleDQN(
 ```
 chainerrl.experiments.train_agent_with_evaluation(
     agent, env,
-    steps=20000,           # 20000ステップ学習する
-    eval_n_runs=10,       ## 評価の度に10回実行する
-    eval_interval=1000,   # 1000ステップ毎に評価する
+    steps=20000,          # 20,000ステップ学習する
+    eval_n_runs=10,       # 評価の度に10回実行する
+    eval_interval=1000,   # 1,000ステップ毎に評価する
     outdir='result')      # resultに出力
 ```
 
@@ -322,6 +321,6 @@ eval_stats = chainerrl.experiments.eval_performance(
     n_runs=1000)
 ```
 
-20,000ステップでは学習が少ないので、もう少しという所ですが、倒立振子がそれなりに安定して居るのが確認できたかと思います。
+20,000ステップでは学習が少ないので、もう少しという所ですが、倒立振子がそれなりに安定しているのが確認できたかと思います。
 
 以上のように、ChainerRL は強化学習の難しいところをとてもうまく隠蔽して、使いやすくしているのが分かるかと思います。ChainerRLのサンプルには、ゲームやロボットの例があるので色々と実行してみると面白いと思います。
