@@ -1,6 +1,6 @@
 # kaggleにsubmitしよう！
 
-@<icon>{cheiko} 「うめざわ、この章では何をやるの？」
+@<icon>{cheiko} 「せんせい、この章では何をやるの？」
 
 //blankline
 

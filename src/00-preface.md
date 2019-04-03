@@ -40,7 +40,7 @@ Deep Learningはあらゆる分野でState-of-the-artを叩き出してきた最
 //blankline
 //noindent
 
-@<icon>{cheiko} 「やっと授業がおわったよ〜〜。うめざわ！」
+@<icon>{cheiko} 「やっと授業がおわったよ〜〜。せんせい！」
 
 //blankline
 //noindent
@@ -50,8 +50,7 @@ Deep Learningはあらゆる分野でState-of-the-artを叩き出してきた最
 //blankline
 //noindent
 
-そう私の名前はちぇい子。これが私がChainerを選んだ理由のもう１つ。妖精の名前はうめざわ。
-二人とも変わった名前なの。
+そう私の名前はちぇい子。これが私がChainerを選んだ理由のもう１つ。変わった名前なの。
 
 //blankline
 //noindent
