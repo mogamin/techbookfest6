@@ -1,10 +1,10 @@
-# まえがき
+# ChainerRL はすごいよ！
 
 @<icon>{yousei}「ここでは、ChainerRLの説明をするよ」
 
 　
-
-@<icon>{cheiko}「CVは分かったけど、RLって何なのよ。東京駅で売ってるやつ？」
+ 
+@<icon>{cheiko}「CVは分かったけど、RLって何？東京駅で売ってるやつ？」
 
 　
 
@@ -84,6 +84,8 @@ https://youtu.be/TmPfTpjtdgg
 
 　
 
+## 強化学習の予備知識
+
 そんなChainerRLですが、せんせいの言うとおり、強化学習を簡単に使えます。
 
 ChainerRLの説明の前に、もう一つ、説明しなければならないものがあります。
@@ -122,6 +124,16 @@ for _ in range(10):
 実行すると以下のような画面が表示されます。
 
 ![ブロック崩しの画面](src/images/chainerrl_fig3.png)
+
+## ChainerRLのインストール
+
+以下の通り、ChainerRL をインストールしてみましょう。
+
+```
+$ pip install chainerrl
+```
+
+## サンプルコード
 
 さて、では、これをChainerRLをつかって学習してみましょう。
 ここでは、なるべくChainerRLに頼って、コードを書かずに書いてみます。
@@ -192,7 +204,10 @@ chainerrl.experiments.train_agent_with_evaluation(
     outdir='result')      # resultに出力
 ```
 
-順に見てみましょう。
+
+## API説明
+
+サンプルコードを順に見てみましょう。
 
 ```
 env = gym.make('CartPole-v0')
@@ -323,4 +338,22 @@ eval_stats = chainerrl.experiments.eval_performance(
 
 20,000ステップでは学習が少ないので、もう少しという所ですが、倒立振子がそれなりに安定しているのが確認できたかと思います。
 
-以上のように、ChainerRL は強化学習の難しいところをとてもうまく隠蔽して、使いやすくしているのが分かるかと思います。ChainerRLのサンプルには、ゲームやロボットの例があるので色々と実行してみると面白いと思います。
+## この先勉強するために
+
+ChainerRL は強化学習の難しいところをとてもうまく隠蔽して、使いやすくしているのが分かったかと思います。ChainerRLのサンプルには、ゲームやロボットの例があるので色々と実行してみると面白いと思います。
+
+今回、倒立振子で少々つまらなかったと思うので、まずおAtariのゲームをお勧めします。
+Atariのゲームも、OpenAI Gymの環境に入っていますので、gymのサンプルで実行できます。
+例えば、以下のサンプルで実行できます。
+
+https://github.com/chainer/chainerrl/blob/master/examples/gym/train_dqn_gym.py
+
+以下のように、env で Breakout-v0 を実行すればブロック崩しの学習が始まります。
+
+```
+python train_dqn_gym.py --env Breakout-v0
+```
+
+@<icon>{yousei}「ChainerRLは分かったかな」
+
+@<icon>{cheiko}「強化学習の理論はまだよく分からないけど、ChainerRLを使えば何かはじめられそうね」
